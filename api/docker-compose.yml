@@ -4,8 +4,21 @@ services:
     build: .
     ports:
       - "3000:3000"
+    environment:
+      NODE_ENV: development
+      # Replace the MongoDB connection string below with your MongoDB Atlas URI
+      MONGO_URI: "mongodb+srv://shanno:chetu123@mongo-cluster.eqnomyj.mongodb.net/test"
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - /usr/src/app/node_modules      
+  node-microservices:
+    build:
+      context: ./node-microservices/user-service # Path to the user-microservice folder
+      dockerfile: Dockerfile # Dockerfile inside the user-microservice folder
+    ports:
+      - "4000:4000" # Expose user-microservice on port 4000
+    # volumes:
+    #   - ./user-microservice:/app # Optional: Mount your local files to the container
     environment:
       - NODE_ENV=development
+    # command: npm start  
