@@ -22,14 +22,13 @@ jobs:
         run: ls -lh
         
       - name: Copy Docker image to EC2 (sanawarn folder)
-        uses: appleboy/drone-scp@1.10.0
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "myapp.tar"
           target: "~/sanawarn/"
-          tar_mode: false
           timeout: 600s  # 10 minutes
           debug: true
 
