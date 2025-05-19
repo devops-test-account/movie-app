@@ -21,6 +21,9 @@ jobs:
       - name: List files in workspace
         run: ls -lh
   
+      - name: Make Docker image tar readable
+        run: chmod 644 myapp.tar
+        
       - name: Copy Docker image to EC2 (sanawarn folder)
         uses: appleboy/scp-action@v0.1.7
         with:
