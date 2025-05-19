@@ -32,6 +32,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "myapp.tar"
           target: "~/sanawarn/"
+          tar_mode: false
+          timeout: 600s  # 10 minutes
+          debug: true
 
       - name: Run Docker container on EC2
         uses: appleboy/ssh-action@v1.0.0
