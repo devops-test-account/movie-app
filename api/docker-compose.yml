@@ -7,7 +7,7 @@ services:
     environment:
       NODE_ENV: development
       # Replace the MongoDB connection string below with your MongoDB Atlas URI
-      MONGO_URI: "mongodb+srv://shanno:chetu123@mongo-cluster.eqnomyj.mongodb.net/test"
+      MONGO_URI: ${{ secrets.MONGO_DB }}
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules      
