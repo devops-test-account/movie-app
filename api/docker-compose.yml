@@ -6,7 +6,7 @@ services:
       - "3000:3000"
     environment:
       NODE_ENV: development
-      # Replace the MongoDB connection string below with your MongoDB Atlas URI
+      # Replace the MongoDB connection string below with your MongoDB Atlas Cloud URI
       MONGO_URI: ${{ secrets.MONGO_DB }}
     volumes:
       - .:/usr/src/app
