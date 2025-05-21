@@ -21,4 +21,3 @@ services:
     #   - ./user-microservice:/app # Optional: Mount your local files to the container
     environment:
       - NODE_ENV=development
-    # command: npm start  
